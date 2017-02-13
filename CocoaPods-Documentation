@@ -1,0 +1,88 @@
+Cocoa Pods Installation:
+
+
+Do steps 1-4 if Cocoapods is not installed in your MAC Machine
+1. sudo gem update --system 
+   (to install Ruby)
+
+2. ruby -v    
+    (to check ruby version)
+
+Note: If ruby version is less then use following commands
+
+rm -rf ~/.rvm
+
+curl -L https://get.rvm.io | bash -s stable
+
+
+3. (Install cocoa pods before installing pods)
+sudo gem install cocoapods -V 
+
+		or 
+
+   sudo gem install -n /usr/local/bin cocoapods  
+   (This is becauase of SIP in new MAC OSX)
+
+
+4. pod setup  
+   (after cocoapods is installed. This process will likely take a while as this command clones the CocoaPods Specs repository into ~/.cocoapods/ on your computer.)
+
+
+
+
+Do steps from 5 if Cocoapods is already installed in your MAC Machine
+5. Go to your project directory and run
+	pod init
+
+This will generate a file "PodFile"
+
+6. Go to your project directory and run
+	pod install
+
+7. Now open new new file created  "YourProjectName.xcworkspace". Don't use "YourProjectName.xcodeproj" from now.
+
+8. To add a GitHub library write below example in "PodFile"
+
+pod 'Reachability'
+
+And run pod install in terminal
+
+
+—————————————————————-----------------------
+
+For updating cocoa pods installed on your system, execute below line
+
+sudo gem install cocoapods
+
+
+
+-------------------------------------------
+
+
+
+
+Cocoa Pods Uninstallation:
+
+Step 1) To check which versions of the cocoapds are installed on the local machine
+
+        sudo gem list --local | grep cocoapods
+
+
+        It will show somthing like this:
+
+		cocoapods-deintegrate (1.0.1)
+		cocoapods-downloader (1.1.3)
+		cocoapods-plugins (1.0.0)
+		cocoapods-search (1.0.0)
+		cocoapods-stats (1.0.0)
+		cocoapods-trunk (1.1.2)
+		cocoapods-try (1.1.0)
+
+
+Step 2) To uninstall each version we have to run the following commands
+
+		It will uninstall the very first cocoa pods installed in the system:
+
+        sudo gem uninstall cocoapods-deintegrate
+
+        Similarly we have to repeat this process for each and every cocoa pods installed in the local system.
